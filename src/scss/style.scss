@@ -1,0 +1,303 @@
+@import 'fonts.scss';
+@import 'consts.scss';
+@import 'header.scss';
+@import 'sidemenu.scss';
+@import 'sections.scss';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+body {
+  font-family: 'TT Lakes Regular';
+  font-size: 14px;
+  color: $color-main;
+  background-color: $color-background;
+  transition: all 0.5s;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (min-width: 320px) {
+  .remove-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .menu,
+  .feedback,
+  .request,
+  .visually-hidden {
+    display: none;
+  }
+
+  /* Main */
+
+  .introduction {
+    margin-bottom: 24px;
+
+    &__sm-list {
+      display: flex;
+      color: $color-gray;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &__lg-list {
+      display: none;
+      color: $color-gray;
+    }
+
+    &__btn {
+      margin: 16px 0;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__box {
+      margin: 0 16px;
+      flex: 1 1 100%;
+    }
+
+    &__img img {
+      width: 100%;
+    }
+  }
+
+  .introduction__title {
+    position: relative;
+    margin: 24px 16px;
+    font-family: 'TT Lakes Bold';
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -16px;
+      width: 4px;
+      height: 40px;
+      border-radius: 0 50% 50% 0;
+      background-color: $color-active;
+    }
+  }
+
+  .introduction__navbar {
+    margin-left: 16px;
+    margin-bottom: 24px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 24px;
+      height: 40px;
+      background: linear-gradient(
+        0.25turn,
+        rgba(248, 248, 248, 0),
+        rgba(248, 248, 248, 1)
+      );
+    }
+  }
+
+  .introduction__item {
+    display: inline-block;
+    padding: 8px 16px;
+
+    &.item--active {
+      border: 1px solid $color-border;
+      border-radius: 5px;
+      background-color: $color-white;
+    }
+  }
+
+  .about-us {
+    height: 5rem;
+    font-size: 0.9rem;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .about-us-part + .about-us-part {
+    margin-top: 5%;
+  }
+
+  /* Footer */
+
+  .footer {
+    margin: 19px 16px;
+    color: $color-gray;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1rem;
+
+    &__item + .footer__item {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .introduction__title {
+    margin: 24px;
+
+    &::before {
+      left: -24px;
+    }
+  }
+
+  .introduction {
+    &__navbar {
+      margin: 32px 24px;
+    }
+
+    &__content {
+      flex-direction: row;
+    }
+
+    &__box {
+      margin: 0 24px;
+    }
+
+    &__img {
+      margin-right: 24px;
+      flex: 1 0 50%;
+    }
+  }
+
+  .about-u {
+    height: 150px;
+  }
+
+  .footer__list {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin: 0 auto;
+    max-width: 720px;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  .footer__item {
+    flex: 1 1 0;
+
+    &:nth-child(1) {
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 1120px) {
+  body {
+    position: relative;
+  }
+
+  .body {
+    margin-top: 42px;
+  }
+
+  .introduction {
+    &__title {
+      margin-left: 35px;
+
+      &::before {
+        left: -35px;
+      }
+    }
+
+    &__navbar {
+      margin-left: 34px;
+    }
+
+    &__sm-list {
+      display: none;
+    }
+
+    &__lg-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      padding: 12px 22px;
+      font-size: 16px;
+    }
+
+    &__main {
+      margin-left: 35px;
+    }
+
+    &__content {
+      font-size: 16px;
+    }
+
+    &__box {
+      margin: 0 36px 0 34px;
+    }
+
+    &__img {
+      margin-right: 28px;
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  body {
+    display: flex;
+  }
+
+  .menu aside {
+    min-height: 100vw;
+  }
+
+  .menu {
+    display: block;
+    min-width: 320px;
+    height: 100%;
+    padding: 35px 24px;
+    background-color: $color-white;
+
+    &.burger {
+      display: none;
+    }
+
+    &__header {
+      padding: 0;
+    }
+
+    &__burger {
+      display: none;
+    }
+
+    &__list {
+      min-height: 610px;
+    }
+  }
+
+  .introduction__title {
+    margin-top: 0;
+  }
+}

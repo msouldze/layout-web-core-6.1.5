@@ -1,0 +1,194 @@
+@media (min-width: 320px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    background-color: $color-white;
+
+    &__logo-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .header__burger {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    background-color: $color-btn;
+    border: none;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 40px;
+      height: 40px;
+      background: no-repeat url('../img/burger_icon.svg');
+    }
+  }
+
+  .header__logo {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      right: -17px;
+      width: 2px;
+      height: 32px;
+      background-color: $color-lightgray;
+    }
+  }
+
+  .button {
+    display: flex;
+  }
+
+  .button__item {
+    &:nth-child(4) {
+      margin-left: 20px;
+    }
+
+    &:nth-child(4) + .button__item:last-child {
+      margin-left: 1rem;
+    }
+  }
+
+  .button__link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: $color-btn;
+    border-radius: 50%;
+
+    text-indent: -9999px;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .inquiry-icon::after {
+    background: center no-repeat url('../img/inquiry-icon.svg');
+  }
+
+  .status-icon::after {
+    background: center no-repeat url('../img/status-icon.svg');
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    justify-content: space-between;
+
+    &__burger {
+      margin-right: 20px;
+    }
+  }
+
+  .header__logo {
+    margin-left: 20px;
+
+    &::before {
+      left: -20px;
+    }
+  }
+
+  .button__item {
+    &.visually-hidden {
+      display: inline-block;
+    }
+
+    & + .button__item {
+      margin-left: 20px;
+    }
+  }
+
+  .button__item:nth-child(3) {
+    position: relative;
+    margin-right: 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: -20px;
+      width: 2px;
+      height: 32px;
+      background-color: $color-lightgray;
+    }
+  }
+
+  .call-icon::after {
+    background: center no-repeat url('../img/phone-icon.svg');
+  }
+
+  .message-icon::after {
+    background: center no-repeat url('../img/msg-icon.svg');
+  }
+
+  .profile-icon::after {
+    background: center no-repeat url('../img/profile-icon.svg');
+  }
+}
+
+@media (min-width: 1120px) {
+  .header {
+    position: absolute;
+    top: -21px;
+    right: 0;
+    z-index: 5;
+
+    background-color: $color-background;
+
+    &__logo-box {
+      display: none;
+    }
+  }
+
+  .button {
+    &__item.visually-hidden {
+      display: none;
+    }
+
+    &__item.lg-only {
+      display: flex;
+      justify-content: flex-end;
+      width: 170px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      text-indent: -130px;
+      white-space: normal;
+      color: #1b1c21;
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .header {
+    top: 18px;
+  }
+}
