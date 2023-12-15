@@ -117,9 +117,13 @@ a {
 
   .introduction__item {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 9px 16px 8px;
 
-    &.item--active {
+    &.item--active,
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      padding: 8px 15px;
       border: 1px solid $color-border;
       border-radius: 5px;
       background-color: $color-white;
@@ -242,8 +246,14 @@ a {
     }
 
     &__item {
-      padding: 12px 22px;
+      padding: 13px 22px 12px;
       font-size: 16px;
+
+      &.item--active,
+      &:hover,
+      &:focus {
+        padding: 12px 21px;
+      }
     }
 
     &__main {
@@ -277,7 +287,6 @@ a {
     display: block;
     min-width: 320px;
     height: 100%;
-    padding: 35px 24px;
     background-color: $color-white;
 
     &.burger {
@@ -285,7 +294,7 @@ a {
     }
 
     &__header {
-      padding: 0;
+      padding: 35px 24px 0;
     }
 
     &__burger {

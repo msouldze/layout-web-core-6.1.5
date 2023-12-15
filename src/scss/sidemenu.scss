@@ -23,7 +23,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px;
+      padding: 18px 18px 20px;
     }
 
     &__logo-box {
@@ -53,24 +53,29 @@
     }
 
     &__list {
-      margin: 40px 0 32px;
+      margin: 0 24px 32px;
       flex-grow: 1;
       font-size: 16px;
     }
 
+    &__item {
+      cursor: pointer;
+    }
+
     &__item + .menu__item {
-      margin-top: 32px;
+      margin-top: 24px;
     }
 
     &__footer {
-      margin: auto 0 32px;
+      margin: auto 24px;
       font-size: 16px;
     }
 
     &__lang {
-      margin: 40px 0 32px;
+      margin: 8px 0 32px;
     }
 
+    &__lang a:hover,
     &__lang-rus {
       color: $color-gray;
     }
@@ -100,7 +105,8 @@
     }
   }
 
-  .item__is-active {
+  .item__is-active,
+  .menu__item:hover {
     position: relative;
     color: $color-gray;
 
@@ -312,11 +318,17 @@
     opacity: 0.9;
   }
 
-  .menu.is-open {
-    max-width: 320px;
-    touch-action: none;
-    box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2),
-      -2px 0 4px rgba(69, 79, 126, 0.02);
+  .menu {
+    &.is-open {
+      max-width: 320px;
+      touch-action: none;
+      box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2),
+        -2px 0 4px rgba(69, 79, 126, 0.02);
+    }
+
+    &__lang {
+      margin-top: 40px;
+    }
   }
 
   .feedback.is-open,
@@ -343,7 +355,17 @@
 }
 
 @media (min-width: 1366px) {
-  .menu .burger {
-    display: none;
+  .menu {
+    & .burger {
+      display: none;
+    }
+
+    &__item + .menu__item {
+      margin-top: 32px;
+    }
+
+    &__list {
+      margin-top: 40px;
+    }
   }
 }
