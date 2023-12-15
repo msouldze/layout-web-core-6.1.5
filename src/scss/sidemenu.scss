@@ -106,7 +106,7 @@
   }
 
   .item__is-active,
-  .menu__item:hover {
+  .menu__list .menu__item:hover {
     position: relative;
     color: $color-gray;
 
